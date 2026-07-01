@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'url';
 import pathLib from 'path';
 import { fileURLToPath } from 'url';
 
@@ -15,6 +14,15 @@ if (!fs.existsSync(configPath)) {
 const data = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
 console.log('Compiling portfolio.json into dist/ folder...');
+
+// Extract custom name and subtitle
+const fullName = (data.about.name || "Carter Cypher").trim();
+const subtitle = (data.about.subtitle || "(Creators Team)").trim();
+const nameWords = fullName.split(/\s+/);
+const firstName = nameWords[0] || "Carter";
+const lastName = nameWords.slice(1).join(" ") || "Cypher";
+
+console.log(`Using custom identity: FullName="${fullName}", FirstName="${firstName}", LastName="${lastName}", Subtitle="${subtitle}"`);
 
 // Create dist/ folder
 const distPath = pathLib.join(__dirname, 'dist');
@@ -153,12 +161,30 @@ function updateFloatingNav(htmlContent) {
   return updated;
 }
 
+// Helper to dynamically update hardcoded name/subtitle strings in HTML
+function updateNamesAndSubtitle(content) {
+  let updated = content;
+  
+  // Inject Service Worker Unregister script immediately in head on localhost to bypass cache bugs
+  const swUnregisterScript = `<script>if("serviceWorker" in navigator && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")){ navigator.serviceWorker.getRegistrations().then(regs => { for(let r of regs) r.unregister(); }); }</script>`;
+  updated = updated.replace(/<head>/, `<head>${swUnregisterScript}`);
+
+  // Replace the loading screen and header text
+  updated = updated.replace(/Kenichi Aikawa/g, fullName);
+  updated = updated.replace(/Kenichi/g, firstName);
+  updated = updated.replace(/Aikawa/g, lastName);
+  updated = updated.replace(/\(Photographer\)/g, subtitle);
+  
+  return updated;
+}
+
 // 4. Update and write index.html to dist/
 const indexPath = pathLib.join(__dirname, 'index.html');
 if (fs.existsSync(indexPath)) {
   let content = fs.readFileSync(indexPath, 'utf-8');
   content = updateNuxtData(content);
   content = updateFloatingNav(content);
+  content = updateNamesAndSubtitle(content);
   fs.writeFileSync(pathLib.join(distPath, 'index.html'), content, 'utf-8');
   console.log('Updated and wrote dist/index.html');
 }
@@ -169,6 +195,7 @@ if (fs.existsSync(aboutPath)) {
   let content = fs.readFileSync(aboutPath, 'utf-8');
   content = updateNuxtData(content);
   content = updateFloatingNav(content);
+  content = updateNamesAndSubtitle(content);
 
   // Update profile email text
   content = content.replace(/(data-cc=")([^"]*)(")/g, `$1${data.about.email}$3`);
@@ -228,6 +255,7 @@ categories.forEach(category => {
   let content = fs.readFileSync(catPath, 'utf-8');
   content = updateNuxtData(content);
   content = updateFloatingNav(content);
+  content = updateNamesAndSubtitle(content);
 
   const items = data[category].items;
 
@@ -261,10 +289,51 @@ if (fs.existsSync(errorPath)) {
   let content = fs.readFileSync(errorPath, 'utf-8');
   content = updateNuxtData(content);
   content = updateFloatingNav(content);
+  content = updateNamesAndSubtitle(content);
   const errDirPath = pathLib.join(distPath, '404');
   fs.mkdirSync(errDirPath, { recursive: true });
   fs.writeFileSync(pathLib.join(errDirPath, 'index.html'), content, 'utf-8');
   console.log('Updated and wrote dist/404/index.html');
+}
+
+// 8. Dynamic Name & SW Replacement in Compiled Client-side JS Assets
+const scriptsPath = pathLib.join(distPath, 'assets', 'scripts');
+if (fs.existsSync(scriptsPath)) {
+  const jsFiles = fs.readdirSync(scriptsPath).filter(f => f.endsWith('.js'));
+  
+  jsFiles.forEach(file => {
+    const fullPath = pathLib.join(scriptsPath, file);
+    let jsContent = fs.readFileSync(fullPath, 'utf-8');
+    let hasChanged = false;
+    
+    // SW Bypass replacements on Localhost
+    if (jsContent.includes('serviceWorker') || jsContent.includes('register')) {
+      if (jsContent.includes('"serviceWorker"in navigator')) {
+        jsContent = jsContent.replace(/"serviceWorker"in navigator/g, '"serviceWorker"in navigator && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1"');
+        hasChanged = true;
+      }
+      if (jsContent.includes('navigator.serviceWorker.register(')) {
+        jsContent = jsContent.replace(/navigator.serviceWorker.register\(/g, '(window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" ? Promise.reject("SW disabled on localhost") : navigator.serviceWorker.register)(');
+        hasChanged = true;
+      }
+    }
+
+    // Name & Subtitle replacements
+    if (jsContent.includes('Kenichi') || jsContent.includes('Aikawa') || jsContent.includes('Photographer')) {
+      // Order of replacement is important (most specific to least specific)
+      jsContent = jsContent.replace(/Kenichi Aikawa/g, fullName);
+      jsContent = jsContent.replace(/Kenichi/g, firstName);
+      jsContent = jsContent.replace(/Aikawa/g, lastName);
+      jsContent = jsContent.replace(/\(Photographer\)/g, subtitle);
+      jsContent = jsContent.replace(/Photographer/g, subtitle.replace(/[()]/g, ''));
+      hasChanged = true;
+    }
+    
+    if (hasChanged) {
+      fs.writeFileSync(fullPath, jsContent, 'utf-8');
+      console.log(`Hydration Fixed: Updated names & SW bypass inside dist/assets/scripts/${file}`);
+    }
+  });
 }
 
 console.log('Build completed! All assets compiled into dist/.');
