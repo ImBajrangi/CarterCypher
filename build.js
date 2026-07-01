@@ -1,19 +1,62 @@
 import fs from 'fs';
-import path from 'path';
+import path from 'url';
+import pathLib from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = pathLib.dirname(__filename);
 
 // 1. Read portfolio.json config
-const configPath = path.join(__dirname, 'portfolio.json');
+const configPath = pathLib.join(__dirname, 'portfolio.json');
 if (!fs.existsSync(configPath)) {
   console.error('Error: portfolio.json not found! Run with portfolio.json present.');
   process.exit(1);
 }
 const data = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
-console.log('Compiling portfolio.json...');
+console.log('Compiling portfolio.json into dist/ folder...');
+
+// Create dist/ folder
+const distPath = pathLib.join(__dirname, 'dist');
+if (fs.existsSync(distPath)) {
+  fs.rmSync(distPath, { recursive: true, force: true });
+}
+fs.mkdirSync(distPath, { recursive: true });
+
+// Helper to recursively copy directories
+function copyDirSync(src, dest) {
+  fs.mkdirSync(dest, { recursive: true });
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const srcPath = pathLib.join(src, entry.name);
+    const destPath = pathLib.join(dest, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDirSync(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+// Copy static folders to dist
+const foldersToCopy = ['assets', 'images'];
+foldersToCopy.forEach(folder => {
+  const src = pathLib.join(__dirname, folder);
+  if (fs.existsSync(src)) {
+    copyDirSync(src, pathLib.join(distPath, folder));
+  }
+});
+
+// Copy individual static files to dist
+const filesToCopy = ['manifest.webmanifest', 'sw.js', 'workbox-9c191d2f.js'];
+filesToCopy.forEach(file => {
+  const src = pathLib.join(__dirname, file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, pathLib.join(distPath, file));
+  }
+});
 
 // 2. Nuxt Payload Serializer
 function serializePayload(data) {
@@ -73,20 +116,14 @@ function serializePayload(data) {
 const payloadData = serializePayload(data);
 const payloadStr = JSON.stringify(payloadData);
 
-// 3. Write _payload.json files
-const pathsToPayloads = [
-  path.join(__dirname, '_payload.json'),
-  path.join(__dirname, 'work', '_payload.json'),
-  path.join(__dirname, 'fashion', '_payload.json'),
-  path.join(__dirname, 'journey', '_payload.json')
-];
-
-for (const p of pathsToPayloads) {
-  const dir = path.dirname(p);
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(p, payloadStr, 'utf-8');
-}
-console.log('Generated payload JSON files successfully.');
+// Write _payload.json files to dist
+const payloadDirs = ['', 'work', 'fashion', 'journey'];
+payloadDirs.forEach(dir => {
+  const dirPath = pathLib.join(distPath, dir);
+  fs.mkdirSync(dirPath, { recursive: true });
+  fs.writeFileSync(pathLib.join(dirPath, '_payload.json'), payloadStr, 'utf-8');
+});
+console.log('Generated payload JSON files in dist/.');
 
 // Helper to escape HTML special characters
 function escapeHtml(text) {
@@ -116,18 +153,18 @@ function updateFloatingNav(htmlContent) {
   return updated;
 }
 
-// 4. Update index.html
-const indexPath = path.join(__dirname, 'index.html');
+// 4. Update and write index.html to dist/
+const indexPath = pathLib.join(__dirname, 'index.html');
 if (fs.existsSync(indexPath)) {
   let content = fs.readFileSync(indexPath, 'utf-8');
   content = updateNuxtData(content);
   content = updateFloatingNav(content);
-  fs.writeFileSync(indexPath, content, 'utf-8');
-  console.log('Updated index.html');
+  fs.writeFileSync(pathLib.join(distPath, 'index.html'), content, 'utf-8');
+  console.log('Updated and wrote dist/index.html');
 }
 
-// 5. Update about/index.html
-const aboutPath = path.join(__dirname, 'about', 'index.html');
+// 5. Update and write about/index.html to dist/
+const aboutPath = pathLib.join(__dirname, 'about', 'index.html');
 if (fs.existsSync(aboutPath)) {
   let content = fs.readFileSync(aboutPath, 'utf-8');
   content = updateNuxtData(content);
@@ -175,15 +212,17 @@ if (fs.existsSync(aboutPath)) {
     return `${p1}${src}${p3}${srcset}${p5}${width}${p7}${height}${p9}`;
   });
 
-  fs.writeFileSync(aboutPath, content, 'utf-8');
-  console.log('Updated about/index.html');
+  const aboutDirPath = pathLib.join(distPath, 'about');
+  fs.mkdirSync(aboutDirPath, { recursive: true });
+  fs.writeFileSync(pathLib.join(aboutDirPath, 'index.html'), content, 'utf-8');
+  console.log('Updated and wrote dist/about/index.html');
 }
 
-// 6. Update work, fashion, journey HTML files
+// 6. Update and write work, fashion, journey HTML files to dist/
 const categories = ['work', 'fashion', 'journey'];
 
 categories.forEach(category => {
-  const catPath = path.join(__dirname, category, 'index.html');
+  const catPath = pathLib.join(__dirname, category, 'index.html');
   if (!fs.existsSync(catPath)) return;
 
   let content = fs.readFileSync(catPath, 'utf-8');
@@ -210,8 +249,22 @@ categories.forEach(category => {
   const horizontalRegex = /(<div class="details-horizontal__slider" data-v-42edfcbc>\s*<div class="details-horizontal__rect" data-v-42edfcbc><!--\[-->)([\s\S]*?)(<!--\]-->)/;
   content = content.replace(horizontalRegex, `$1${horizontalItemsHtml}$3`);
 
-  fs.writeFileSync(catPath, content, 'utf-8');
-  console.log(`Updated ${category}/index.html`);
+  const catDirPath = pathLib.join(distPath, category);
+  fs.mkdirSync(catDirPath, { recursive: true });
+  fs.writeFileSync(pathLib.join(catDirPath, 'index.html'), content, 'utf-8');
+  console.log(`Updated and wrote dist/${category}/index.html`);
 });
 
-console.log('Build completed! Synced all configurations successfully.');
+// 7. Update and copy 404/index.html to dist/
+const errorPath = pathLib.join(__dirname, '404', 'index.html');
+if (fs.existsSync(errorPath)) {
+  let content = fs.readFileSync(errorPath, 'utf-8');
+  content = updateNuxtData(content);
+  content = updateFloatingNav(content);
+  const errDirPath = pathLib.join(distPath, '404');
+  fs.mkdirSync(errDirPath, { recursive: true });
+  fs.writeFileSync(pathLib.join(errDirPath, 'index.html'), content, 'utf-8');
+  console.log('Updated and wrote dist/404/index.html');
+}
+
+console.log('Build completed! All assets compiled into dist/.');

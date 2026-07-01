@@ -42,8 +42,10 @@ This repository is optimized for one-click deployment on **Vercel**:
 
 1. Push your repository to **GitHub**.
 2. Connect your repository to **Vercel**.
-3. Use the default build settings:
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `.` (root directory)
-   - **Install Command**: `npm install`
+3. In the Vercel dashboard:
+   - Under **Framework Preset**, select **Other** (do NOT use Nuxt as it is a custom compiler).
+   - Under **Build & Development Settings**:
+     - **Build Command**: `npm run build`
+     - **Output Directory**: `dist`
+     - **Install Command**: `npm install`
 # CarterCypher

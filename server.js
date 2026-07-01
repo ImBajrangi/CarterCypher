@@ -30,7 +30,7 @@ const server = http.createServer((req, res) => {
   if (req.method === 'OPTIONS') { res.statusCode = 204; res.end(); return; }
 
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  let filePath = path.join(process.cwd(), parsedUrl.pathname);
+  let filePath = path.join(process.cwd(), 'dist', parsedUrl.pathname);
 
   // Directory -> index.html
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
