@@ -1,70 +1,14 @@
 {
-  "overview": {
-    "items": [
-      {
-        "id": 25,
-        "slug": "work",
-        "title": "Work",
-        "colors": [
-          "#F3ECF3",
-          "#D9C6DB",
-          "#D694AD",
-          "#AD7092"
-        ],
-        "thumbnailSrc": "/images/data/2026/05/18234246/w_000-256x171.jpg.webp",
-        "homeImage": {
-          "src": "/images/data/2026/05/18234246/w_000-scaled.jpg.webp",
-          "alt": "Work",
-          "width": 2560,
-          "height": 1714
-        }
-      },
-      {
-        "id": 55,
-        "slug": "fashion",
-        "title": "Fashion",
-        "colors": [
-          "#DBD1D0",
-          "#282824",
-          "#E9C797",
-          "#D0A975"
-        ],
-        "thumbnailSrc": "/images/data/2026/05/19004430/f_000-256x177.jpg.webp",
-        "homeImage": {
-          "src": "/images/data/2026/05/19004430/f_000-scaled.jpg.webp",
-          "alt": "Fashion",
-          "width": 2560,
-          "height": 1770
-        }
-      },
-      {
-        "id": 87,
-        "slug": "journey",
-        "title": "Journey",
-        "colors": [
-          "#D7F3FD",
-          "#B4D0E8",
-          "#8DB5D9",
-          "#6B99C5"
-        ],
-        "thumbnailSrc": "/images/data/2026/05/19013644/j_000-256x171.jpg.webp",
-        "homeImage": {
-          "src": "/images/data/2026/05/19013644/j_000-scaled.jpg.webp",
-          "alt": "Journey",
-          "width": 2560,
-          "height": 1708
-        }
-      }
-    ]
-  },
   "about": {
-    "description": "Born in Tochigi, Japan in 1977. Lives and works in Tokyo, Japan. Graduated from Setsu mode seminar. Became independent after working as a photographer assistant. Active in Fashion, Portrait, Life style, Food, corporate advertising, etc.",
-    "email": "contact[at]aikawakenichi[dot]com",
-    "instagram": "aikawa_kenichi",
-    "facebook": "aikawa1977",
+    "name": "CarterCypher",
+    "subtitle": "(Creators Team)",
+    "description": "A passionate group of visual creators, designers, and storytellers based in Tokyo, Japan. Active in Fashion, Portrait, Life style, Food, and Corporate Advertising.",
+    "email": "creators[at]cartercypher[dot]com",
+    "instagram": "carter_cypher",
+    "facebook": "carter_cypher",
     "mainImage": {
-      "src": "/images/data/2026/05/18215841/a_000-scaled.jpg.webp",
-      "srcset": "/images/data/2026/05/18215841/a_000-205x256.jpg.webp 205w, /images/data/2026/05/18215841/a_000-512x640.jpg.webp 512w, /images/data/2026/05/18215841/a_000-1024x1280.jpg.webp 1024w, /images/data/2026/05/18215841/a_000-1536x1920.jpg.webp 1536w, /images/data/2026/05/18215841/a_000-2048x2560.jpg.webp 2048w, /images/data/2026/05/18215841/a_000-scaled.jpg.webp 2048w",
+      "src": "/images/team/about_main.webp",
+      "srcset": "/images/team/about_main.webp 2048w",
       "width": 2048,
       "height": 2560,
       "colors": [
@@ -75,8 +19,8 @@
       ]
     },
     "backgroundImage": {
-      "src": "/images/data/2026/05/18220321/a_001-scaled.jpg.webp",
-      "srcset": "/images/data/2026/05/18220321/a_001-205x256.jpg.webp 205w, /images/data/2026/05/18220321/a_001-512x640.jpg.webp 512w, /images/data/2026/05/18220321/a_001-1024x1280.jpg.webp 1024w, /images/data/2026/05/18220321/a_001-1536x1920.jpg.webp 1536w, /images/data/2026/05/18220321/a_001-2048x2560.jpg.webp 2048w, /images/data/2026/05/18220321/a_001-scaled.jpg.webp 2048w",
+      "src": "/images/team/about_bg.webp",
+      "srcset": "/images/team/about_bg.webp 2048w",
       "width": 2048,
       "height": 2560,
       "colors": [
@@ -87,13 +31,71 @@
       ]
     }
   },
+  "overview": {
+    "items": [
+      {
+        "id": "work",
+        "slug": "work",
+        "title": "Work",
+        "colors": [
+          "#F3ECF3",
+          "#D9C6DB",
+          "#D694AD",
+          "#AD7092"
+        ],
+        "thumbnailSrc": "/images/team/work_cover_thumb.webp",
+        "homeImage": {
+          "src": "/images/team/work_cover.webp",
+          "alt": "Work",
+          "width": 2560,
+          "height": 1714
+        }
+      },
+      {
+        "id": "fashion",
+        "slug": "fashion",
+        "title": "Fashion",
+        "colors": [
+          "#DBD1D0",
+          "#282824",
+          "#E9C797",
+          "#D0A975"
+        ],
+        "thumbnailSrc": "/images/team/fashion_cover_thumb.webp",
+        "homeImage": {
+          "src": "/images/team/fashion_cover.webp",
+          "alt": "Fashion",
+          "width": 2560,
+          "height": 1770
+        }
+      },
+      {
+        "id": "journey",
+        "slug": "journey",
+        "title": "Journey",
+        "colors": [
+          "#D7F3FD",
+          "#B4D0E8",
+          "#8DB5D9",
+          "#6B99C5"
+        ],
+        "thumbnailSrc": "/images/team/journey_cover_thumb.webp",
+        "homeImage": {
+          "src": "/images/team/journey_cover.webp",
+          "alt": "Journey",
+          "width": 2560,
+          "height": 1708
+        }
+      }
+    ]
+  },
   "work": {
     "slug": "work",
     "title": "Work",
-    "description": "Work portfolio detail",
+    "description": "Work creators portfolio detail",
     "items": [
       {
-        "id": 23,
+        "id": "work-1",
         "colors": [
           "#F0E6EB",
           "#B05A49",
@@ -101,14 +103,14 @@
           "#30334A"
         ],
         "image": {
-          "src": "/images/data/2026/05/18234428/w_001-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/18234428/w_001-256x179.jpg.webp",
-          "width": 2560,
-          "height": 1791
+          "src": "/images/team/work_1.webp",
+          "thumbnailSrc": "/images/team/work_1_thumb.webp",
+          "width": 1085,
+          "height": 1450
         }
       },
       {
-        "id": 26,
+        "id": "work-2",
         "colors": [
           "#8FAAD7",
           "#B0CDF2",
@@ -116,14 +118,14 @@
           "#7089B6"
         ],
         "image": {
-          "src": "/images/data/2026/05/18235215/w_002-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/18235215/w_002-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/work_2.webp",
+          "thumbnailSrc": "/images/team/work_2_thumb.webp",
+          "width": 1086,
+          "height": 1448
         }
       },
       {
-        "id": 27,
+        "id": "work-3",
         "colors": [
           "#D0AE93",
           "#FAEDCE",
@@ -131,14 +133,14 @@
           "#8C7874"
         ],
         "image": {
-          "src": "/images/data/2026/05/18235331/w_003-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/18235331/w_003-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
+          "src": "/images/team/work_3.webp",
+          "thumbnailSrc": "/images/team/work_3_thumb.webp",
+          "width": 1023,
+          "height": 1537
         }
       },
       {
-        "id": 28,
+        "id": "work-4",
         "colors": [
           "#EDF5F8",
           "#C8D5DA",
@@ -146,14 +148,14 @@
           "#B6AAB0"
         ],
         "image": {
-          "src": "/images/data/2026/05/18235506/w_004-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/18235506/w_004-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/work_4.webp",
+          "thumbnailSrc": "/images/team/work_4_thumb.webp",
+          "width": 1023,
+          "height": 1537
         }
       },
       {
-        "id": 29,
+        "id": "work-5",
         "colors": [
           "#EDEDEE",
           "#332D2D",
@@ -161,14 +163,14 @@
           "#534B4B"
         ],
         "image": {
-          "src": "/images/data/2026/05/18235605/w_005-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/18235605/w_005-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/work_5.webp",
+          "thumbnailSrc": "/images/team/work_5_thumb.webp",
+          "width": 1023,
+          "height": 1537
         }
       },
       {
-        "id": 30,
+        "id": "work-6",
         "colors": [
           "#FAF7EE",
           "#EBCA94",
@@ -176,14 +178,14 @@
           "#CFAA78"
         ],
         "image": {
-          "src": "/images/data/2026/05/18235748/w_006-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/18235748/w_006-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
+          "src": "/images/team/work_6.webp",
+          "thumbnailSrc": "/images/team/work_6_thumb.webp",
+          "width": 947,
+          "height": 1661
         }
       },
       {
-        "id": 31,
+        "id": "work-7",
         "colors": [
           "#524F4A",
           "#75706A",
@@ -191,14 +193,14 @@
           "#B6B3A8"
         ],
         "image": {
-          "src": "/images/data/2026/05/18235948/w_007-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/18235948/w_007-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
+          "src": "/images/team/work_7.webp",
+          "thumbnailSrc": "/images/team/work_7_thumb.webp",
+          "width": 1024,
+          "height": 1535
         }
       },
       {
-        "id": 32,
+        "id": "work-8",
         "colors": [
           "#4D4C48",
           "#757167",
@@ -206,340 +208,10 @@
           "#B7B3A7"
         ],
         "image": {
-          "src": "/images/data/2026/05/19000148/w_008-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19000148/w_008-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 33,
-        "colors": [
-          "#4D4B46",
-          "#D8D3C8",
-          "#777066",
-          "#B9B2A7"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19000336/w_009-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19000336/w_009-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 34,
-        "colors": [
-          "#8999A7",
-          "#F3EACF",
-          "#4F4C34",
-          "#D0C9B2"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19000530/w_010-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19000530/w_010-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 54,
-        "colors": [
-          "#F3FBFE",
-          "#B7C6D3",
-          "#59564D",
-          "#ECD8B5"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19004232/w_011-1-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19004232/w_011-1-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 35,
-        "colors": [
-          "#D3E5F0",
-          "#AFC8DC",
-          "#7193B0",
-          "#B4CFE6"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19001042/w_012-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19001042/w_012-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 36,
-        "colors": [
-          "#EDEDEE",
-          "#CFD0D2",
-          "#B0B2B1",
-          "#B78D16"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19001209/w_013-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19001209/w_013-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 37,
-        "colors": [
-          "#D0C8B6",
-          "#B7AA94",
-          "#988569",
-          "#E8E5D8"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19001403/w_014-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19001403/w_014-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 38,
-        "colors": [
-          "#E8EBEB",
-          "#B5B6AC",
-          "#4E4C4A",
-          "#727268"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19001615/w_015-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19001615/w_015-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 39,
-        "colors": [
-          "#D4D4CD",
-          "#B5B5AC",
-          "#322F2D",
-          "#91928F"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19001817/w_016-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19001817/w_016-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 40,
-        "colors": [
-          "#4E453A",
-          "#D0D0CF",
-          "#726854",
-          "#B4B1AD"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19002034/w_017-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19002034/w_017-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 41,
-        "colors": [
-          "#F4F4F4",
-          "#D6D1CC",
-          "#CDD28E",
-          "#AAB370"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19002217/w_018-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19002217/w_018-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 42,
-        "colors": [
-          "#F5F5F2",
-          "#AD9271",
-          "#6C4E34",
-          "#D4CBB3"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19002328/w_019-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19002328/w_019-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 43,
-        "colors": [
-          "#FCFAEF",
-          "#E9D7AF",
-          "#301308",
-          "#D2B88B"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19002511/w_020-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19002511/w_020-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 44,
-        "colors": [
-          "#B2906C",
-          "#916E4F",
-          "#704B34",
-          "#D1B48D"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19002738/w_021-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19002738/w_021-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 45,
-        "colors": [
-          "#F6F4F2",
-          "#DACFC9",
-          "#8E786B",
-          "#AE988C"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19002854/w_022-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19002854/w_022-256x144.jpg.webp",
-          "width": 2560,
-          "height": 1440
-        }
-      },
-      {
-        "id": 46,
-        "colors": [
-          "#FAF9F6",
-          "#736B67",
-          "#554F4D",
-          "#AC968B"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19003057/w_023-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19003057/w_023-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 47,
-        "colors": [
-          "#020508",
-          "#192835",
-          "#4C6579",
-          "#324657"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19003213/w_024-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19003213/w_024-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 48,
-        "colors": [
-          "#EAEBF0",
-          "#2E2E36",
-          "#99AAB6",
-          "#75868F"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19003309/w_025-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19003309/w_025-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1706
-        }
-      },
-      {
-        "id": 49,
-        "colors": [
-          "#E9E9D4",
-          "#CFCEB2",
-          "#282A2C",
-          "#B1AF91"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19003520/w_026-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19003520/w_026-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 50,
-        "colors": [
-          "#F5F3EF",
-          "#DAD6CB",
-          "#D1B58F",
-          "#B4956F"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19003620/w_027-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19003620/w_027-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 51,
-        "colors": [
-          "#565147",
-          "#FCFAF4",
-          "#8F8876",
-          "#AFA998"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19003747/w_028-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19003747/w_028-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 52,
-        "colors": [
-          "#FAF8F3",
-          "#545049",
-          "#D5C8B3",
-          "#B7A791"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19003929/w_029-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19003929/w_029-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 53,
-        "colors": [
-          "#B4B4B1",
-          "#95918C",
-          "#EDE6D5",
-          "#4F362A"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19004112/w_030-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19004112/w_030-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/work_8.webp",
+          "thumbnailSrc": "/images/team/work_8_thumb.webp",
+          "width": 1086,
+          "height": 1448
         }
       }
     ]
@@ -547,10 +219,10 @@
   "fashion": {
     "slug": "fashion",
     "title": "Fashion",
-    "description": "Fashion portfolio detail",
+    "description": "Fashion creators portfolio detail",
     "items": [
       {
-        "id": 57,
+        "id": "fashion-1",
         "colors": [
           "#F2EFF3",
           "#EED28B",
@@ -558,14 +230,14 @@
           "#D3AC75"
         ],
         "image": {
-          "src": "/images/data/2026/05/19004606/f_001-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19004606/f_001-256x177.jpg.webp",
-          "width": 2560,
-          "height": 1770
+          "src": "/images/team/fashion_1.webp",
+          "thumbnailSrc": "/images/team/fashion_1_thumb.webp",
+          "width": 1085,
+          "height": 1450
         }
       },
       {
-        "id": 58,
+        "id": "fashion-2",
         "colors": [
           "#F2F0FD",
           "#D2C8F0",
@@ -573,14 +245,14 @@
           "#8F8BCC"
         ],
         "image": {
-          "src": "/images/data/2026/05/19004702/f_002-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19004702/f_002-256x177.jpg.webp",
-          "width": 2560,
-          "height": 1770
+          "src": "/images/team/fashion_2.webp",
+          "thumbnailSrc": "/images/team/fashion_2_thumb.webp",
+          "width": 1023,
+          "height": 1537
         }
       },
       {
-        "id": 59,
+        "id": "fashion-3",
         "colors": [
           "#EDE8E8",
           "#191A17",
@@ -588,14 +260,14 @@
           "#AF966E"
         ],
         "image": {
-          "src": "/images/data/2026/05/19004758/f_003-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19004758/f_003-256x177.jpg.webp",
-          "width": 2560,
-          "height": 1770
+          "src": "/images/team/fashion_3.webp",
+          "thumbnailSrc": "/images/team/fashion_3_thumb.webp",
+          "width": 1023,
+          "height": 1537
         }
       },
       {
-        "id": 60,
+        "id": "fashion-4",
         "colors": [
           "#EAE8EC",
           "#B1B3B0",
@@ -603,14 +275,14 @@
           "#8D8676"
         ],
         "image": {
-          "src": "/images/data/2026/05/19004857/f_004-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19004857/f_004-256x177.jpg.webp",
-          "width": 2560,
-          "height": 1770
+          "src": "/images/team/fashion_4.webp",
+          "thumbnailSrc": "/images/team/fashion_4_thumb.webp",
+          "width": 1085,
+          "height": 1450
         }
       },
       {
-        "id": 61,
+        "id": "fashion-5",
         "colors": [
           "#2E2F2E",
           "#ADB5B2",
@@ -618,14 +290,14 @@
           "#687677"
         ],
         "image": {
-          "src": "/images/data/2026/05/19005002/f_005-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005002/f_005-256x177.jpg.webp",
-          "width": 2560,
-          "height": 1770
+          "src": "/images/team/fashion_5.webp",
+          "thumbnailSrc": "/images/team/fashion_5_thumb.webp",
+          "width": 1053,
+          "height": 1493
         }
       },
       {
-        "id": 62,
+        "id": "fashion-6",
         "colors": [
           "#EDEEF2",
           "#D0D1D3",
@@ -633,14 +305,14 @@
           "#8D9095"
         ],
         "image": {
-          "src": "/images/data/2026/05/19005131/f_006-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005131/f_006-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/fashion_6.webp",
+          "thumbnailSrc": "/images/team/fashion_6_thumb.webp",
+          "width": 1024,
+          "height": 1536
         }
       },
       {
-        "id": 63,
+        "id": "fashion-7",
         "colors": [
           "#D3CFCC",
           "#B8B0A9",
@@ -648,14 +320,14 @@
           "#363435"
         ],
         "image": {
-          "src": "/images/data/2026/05/19005253/f_007-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005253/f_007-171x256.jpg.webp",
-          "width": 1707,
-          "height": 2560
+          "src": "/images/team/fashion_7.webp",
+          "thumbnailSrc": "/images/team/fashion_7_thumb.webp",
+          "width": 1672,
+          "height": 941
         }
       },
       {
-        "id": 64,
+        "id": "fashion-8",
         "colors": [
           "#D3D2D1",
           "#B9B5AC",
@@ -663,340 +335,10 @@
           "#6E4C3A"
         ],
         "image": {
-          "src": "/images/data/2026/05/19005351/f_008-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005351/f_008-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 65,
-        "colors": [
-          "#D5D4D1",
-          "#B6B3AF",
-          "#534A4B",
-          "#756869"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19005445/f_009-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005445/f_009-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 66,
-        "colors": [
-          "#E8CFB2",
-          "#B6AFA4",
-          "#918F83",
-          "#717369"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19005522/f_010-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005522/f_010-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 67,
-        "colors": [
-          "#EFECE6",
-          "#B9B4A9",
-          "#697393",
-          "#4B3930"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19005618/f_011-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005618/f_011-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 68,
-        "colors": [
-          "#383631",
-          "#726B4A",
-          "#D8CCAF",
-          "#B6AA8F"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19005825/f_012-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19005825/f_012-171x256.jpg.webp",
-          "width": 1708,
-          "height": 2560
-        }
-      },
-      {
-        "id": 69,
-        "colors": [
-          "#6E564A",
-          "#CDB091",
-          "#AE8F71",
-          "#453D39"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19010026/f_013-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19010026/f_013-171x256.jpg.webp",
-          "width": 1708,
-          "height": 2560
-        }
-      },
-      {
-        "id": 70,
-        "colors": [
-          "#CEC8B9",
-          "#312E2A",
-          "#AA8E74",
-          "#6A584B"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19010206/f_014-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19010206/f_014-171x256.jpg.webp",
-          "width": 1707,
-          "height": 2560
-        }
-      },
-      {
-        "id": 71,
-        "colors": [
-          "#FBF8F8",
-          "#6EB0B6",
-          "#E9DAB2",
-          "#AFCDC7"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19010304/f_015-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19010304/f_015-179x256.jpg.webp",
-          "width": 1791,
-          "height": 2560
-        }
-      },
-      {
-        "id": 72,
-        "colors": [
-          "#D5D5CB",
-          "#B4B4A9",
-          "#98978E",
-          "#6F5848"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19010435/f_016-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19010435/f_016-171x256.jpg.webp",
-          "width": 1707,
-          "height": 2560
-        }
-      },
-      {
-        "id": 73,
-        "colors": [
-          "#E7D7CE",
-          "#AB978B",
-          "#CAB4A9",
-          "#8B786C"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19010643/f_017-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19010643/f_017-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 74,
-        "colors": [
-          "#534C45",
-          "#908873",
-          "#ADA995",
-          "#CBC8B2"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19010850/f_018-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19010850/f_018-171x256.jpg.webp",
-          "width": 1708,
-          "height": 2560
-        }
-      },
-      {
-        "id": 75,
-        "colors": [
-          "#C6C4B8",
-          "#ADA797",
-          "#908878",
-          "#504F4C"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19011054/f_019-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19011054/f_019-171x256.jpg.webp",
-          "width": 1707,
-          "height": 2560
-        }
-      },
-      {
-        "id": 76,
-        "colors": [
-          "#F4F5F3",
-          "#B7B8AB",
-          "#D5D6CF",
-          "#353536"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19011301/f_020-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19011301/f_020-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 77,
-        "colors": [
-          "#D0D4D1",
-          "#B5B7AE",
-          "#99988B",
-          "#F3F4F1"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19011512/f_021-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19011512/f_021-171x256.jpg.webp",
-          "width": 1707,
-          "height": 2560
-        }
-      },
-      {
-        "id": 78,
-        "colors": [
-          "#120E0B",
-          "#706759",
-          "#363028",
-          "#B5A894"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19011659/f_022-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19011659/f_022-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 79,
-        "colors": [
-          "#F6F4EB",
-          "#CDCAB6",
-          "#B0AA93",
-          "#39383A"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19011742/f_023-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19011742/f_023-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 80,
-        "colors": [
-          "#F2E7E9",
-          "#F0D0B2",
-          "#6D322D",
-          "#E4AF4D"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19011838/f_024-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19011838/f_024-256x177.jpg.webp",
-          "width": 2560,
-          "height": 1770
-        }
-      },
-      {
-        "id": 81,
-        "colors": [
-          "#FAF8F8",
-          "#CECFD8",
-          "#92A974",
-          "#748A58"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19011935/f_025-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19011935/f_025-256x177.jpg.webp",
-          "width": 2560,
-          "height": 1770
-        }
-      },
-      {
-        "id": 82,
-        "colors": [
-          "#F8F3EE",
-          "#D4D2C9",
-          "#B3B5AA",
-          "#90958A"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19012037/f_026-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19012037/f_026-177x256.jpg.webp",
-          "width": 1770,
-          "height": 2560
-        }
-      },
-      {
-        "id": 83,
-        "colors": [
-          "#F8E7D7",
-          "#D43B34",
-          "#4F282F",
-          "#903233"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19012139/f_027-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19012139/f_027-177x256.jpg.webp",
-          "width": 1770,
-          "height": 2560
-        }
-      },
-      {
-        "id": 84,
-        "colors": [
-          "#D3D1CD",
-          "#94918B",
-          "#74716C",
-          "#AFADA8"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19012321/f_028-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19012321/f_028-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 85,
-        "colors": [
-          "#F5F4F1",
-          "#D5D1CC",
-          "#161413",
-          "#8C7A67"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19012457/f_029-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19012457/f_029-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 86,
-        "colors": [
-          "#262628",
-          "#DAC5AC",
-          "#AE9178",
-          "#745448"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19012626/f_030-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19012626/f_030-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/fashion_8.webp",
+          "thumbnailSrc": "/images/team/fashion_8_thumb.webp",
+          "width": 1023,
+          "height": 1537
         }
       }
     ]
@@ -1004,10 +346,10 @@
   "journey": {
     "slug": "journey",
     "title": "Journey",
-    "description": "Journey portfolio detail",
+    "description": "Journey creators portfolio detail",
     "items": [
       {
-        "id": 89,
+        "id": "journey-1",
         "colors": [
           "#D2EAE9",
           "#51504A",
@@ -1015,14 +357,14 @@
           "#697372"
         ],
         "image": {
-          "src": "/images/data/2026/05/19014233/j_001-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19014233/j_001-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/journey_1.webp",
+          "thumbnailSrc": "/images/team/journey_1_thumb.webp",
+          "width": 1440,
+          "height": 1123
         }
       },
       {
-        "id": 90,
+        "id": "journey-2",
         "colors": [
           "#CDD1AF",
           "#50524A",
@@ -1030,14 +372,14 @@
           "#F4EDCB"
         ],
         "image": {
-          "src": "/images/data/2026/05/19014352/j_002-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19014352/j_002-192x256.jpg.webp",
-          "width": 1920,
-          "height": 2560
+          "src": "/images/team/journey_2.webp",
+          "thumbnailSrc": "/images/team/journey_2_thumb.webp",
+          "width": 1440,
+          "height": 1440
         }
       },
       {
-        "id": 91,
+        "id": "journey-3",
         "colors": [
           "#D6E4D8",
           "#CEAF71",
@@ -1045,14 +387,14 @@
           "#74694D"
         ],
         "image": {
-          "src": "/images/data/2026/05/19014512/j_003-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19014512/j_003-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
+          "src": "/images/team/journey_3.webp",
+          "thumbnailSrc": "/images/team/journey_3_thumb.webp",
+          "width": 1080,
+          "height": 1440
         }
       },
       {
-        "id": 92,
+        "id": "journey-4",
         "colors": [
           "#E5E7C6",
           "#C7AF72",
@@ -1060,14 +402,14 @@
           "#968D66"
         ],
         "image": {
-          "src": "/images/data/2026/05/19014635/j_004-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19014635/j_004-192x256.jpg.webp",
-          "width": 1920,
-          "height": 2560
+          "src": "/images/team/journey_4.webp",
+          "thumbnailSrc": "/images/team/journey_4_thumb.webp",
+          "width": 1440,
+          "height": 1440
         }
       },
       {
-        "id": 93,
+        "id": "journey-5",
         "colors": [
           "#595246",
           "#D3D0CD",
@@ -1075,14 +417,14 @@
           "#B3B1AC"
         ],
         "image": {
-          "src": "/images/data/2026/05/19014901/j_005-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19014901/j_005-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
+          "src": "/images/team/journey_5.webp",
+          "thumbnailSrc": "/images/team/journey_5_thumb.webp",
+          "width": 1440,
+          "height": 1440
         }
       },
       {
-        "id": 94,
+        "id": "journey-6",
         "colors": [
           "#D1CDB3",
           "#EEE9CF",
@@ -1090,14 +432,14 @@
           "#D4D6C8"
         ],
         "image": {
-          "src": "/images/data/2026/05/19015121/j_006-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19015121/j_006-192x256.jpg.webp",
-          "width": 1920,
-          "height": 2560
+          "src": "/images/team/journey_6.webp",
+          "thumbnailSrc": "/images/team/journey_6_thumb.webp",
+          "width": 1440,
+          "height": 1440
         }
       },
       {
-        "id": 95,
+        "id": "journey-7",
         "colors": [
           "#CCD9D3",
           "#A9B7B6",
@@ -1105,14 +447,14 @@
           "#70726B"
         ],
         "image": {
-          "src": "/images/data/2026/05/19015314/j_007-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19015314/j_007-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
+          "src": "/images/team/journey_7.webp",
+          "thumbnailSrc": "/images/team/journey_7_thumb.webp",
+          "width": 1440,
+          "height": 1440
         }
       },
       {
-        "id": 96,
+        "id": "journey-8",
         "colors": [
           "#26324C",
           "#486994",
@@ -1120,340 +462,10 @@
           "#6991B5"
         ],
         "image": {
-          "src": "/images/data/2026/05/19015456/j_008-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19015456/j_008-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1708
-        }
-      },
-      {
-        "id": 97,
-        "colors": [
-          "#F4F2EA",
-          "#D0CCB2",
-          "#8B7449",
-          "#6E5531"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19015616/j_009-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19015616/j_009-192x256.jpg.webp",
-          "width": 1920,
-          "height": 2560
-        }
-      },
-      {
-        "id": 98,
-        "colors": [
-          "#D2D6C7",
-          "#B5BAAB",
-          "#8C8976",
-          "#6D6958"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19020009/j_010-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19020009/j_010-192x256.jpg.webp",
-          "width": 1920,
-          "height": 2560
-        }
-      },
-      {
-        "id": 99,
-        "colors": [
-          "#D9D0D2",
-          "#B0968B",
-          "#EFEEEB",
-          "#E4D9CF"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19020243/j_011-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19020243/j_011-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 100,
-        "colors": [
-          "#CEE5F3",
-          "#36504C",
-          "#53706A",
-          "#769185"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19020344/j_012-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19020344/j_012-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 101,
-        "colors": [
-          "#98B2C9",
-          "#EEF3F5",
-          "#C9D5D9",
-          "#7593AE"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19020444/j_013-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19020444/j_013-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 102,
-        "colors": [
-          "#CCE7F5",
-          "#B1CAD2",
-          "#91ADB7",
-          "#718B94"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19020550/j_014-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19020550/j_014-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 103,
-        "colors": [
-          "#D3E4E6",
-          "#534731",
-          "#8A7853",
-          "#B6A676"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19020652/j_015-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19020652/j_015-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 104,
-        "colors": [
-          "#B4A990",
-          "#998C6D",
-          "#CDC9B2",
-          "#D6E6E8"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19020907/j_016-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19020907/j_016-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 105,
-        "colors": [
-          "#4F4B34",
-          "#716E4F",
-          "#908F6D",
-          "#938936"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19021136/j_017-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19021136/j_017-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 106,
-        "colors": [
-          "#F8F7F5",
-          "#D5D6CF",
-          "#CBBA8A",
-          "#766D4D"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19021400/j_018-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19021400/j_018-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 107,
-        "colors": [
-          "#F9F7F2",
-          "#D2CCD0",
-          "#544D49",
-          "#B0ACB3"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19021621/j_019-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19021621/j_019-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 108,
-        "colors": [
-          "#CCDAED",
-          "#686F55",
-          "#494D37",
-          "#8AAAB5"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19021844/j_020-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19021844/j_020-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 109,
-        "colors": [
-          "#AFB6D6",
-          "#F8F7F7",
-          "#D3D4E6",
-          "#685A58"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19021948/j_021-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19021948/j_021-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 110,
-        "colors": [
-          "#D4EAF8",
-          "#738795",
-          "#B6C5DB",
-          "#A6A598"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19022042/j_022-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19022042/j_022-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 111,
-        "colors": [
-          "#2F2F30",
-          "#D3D5CA",
-          "#555246",
-          "#B5B7AB"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19022146/j_023-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19022146/j_023-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 112,
-        "colors": [
-          "#C6D595",
-          "#B8D6E6",
-          "#E6E9B8",
-          "#6D8A92"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19022248/j_024-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19022248/j_024-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 113,
-        "colors": [
-          "#E6F5F8",
-          "#C7D4D4",
-          "#AAB7B1",
-          "#8E988A"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19022504/j_025-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19022504/j_025-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 114,
-        "colors": [
-          "#F5FBFC",
-          "#CFCFB4",
-          "#A9AD97",
-          "#718E93"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19022604/j_026-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19022604/j_026-205x256.jpg.webp",
-          "width": 2048,
-          "height": 2560
-        }
-      },
-      {
-        "id": 115,
-        "colors": [
-          "#D1D1C9",
-          "#514539",
-          "#99A6A7",
-          "#FEE5B8"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19022844/j_027-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19022844/j_027-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 116,
-        "colors": [
-          "#ECF0EF",
-          "#CCD5D2",
-          "#687776",
-          "#A9B7B4"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19023117/j_028-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19023117/j_028-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 117,
-        "colors": [
-          "#CBB195",
-          "#E7CFB4",
-          "#A99279",
-          "#786857"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19023437/j_029-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19023437/j_029-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
-        }
-      },
-      {
-        "id": 118,
-        "colors": [
-          "#322F28",
-          "#504E4B",
-          "#696E80",
-          "#171513"
-        ],
-        "image": {
-          "src": "/images/data/2026/05/19023809/j_030-scaled.jpg.webp",
-          "thumbnailSrc": "/images/data/2026/05/19023809/j_030-256x171.jpg.webp",
-          "width": 2560,
-          "height": 1707
+          "src": "/images/team/journey_8.webp",
+          "thumbnailSrc": "/images/team/journey_8_thumb.webp",
+          "width": 941,
+          "height": 1672
         }
       }
     ]
