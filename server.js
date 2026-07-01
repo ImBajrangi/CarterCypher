@@ -30,16 +30,7 @@ const server = http.createServer((req, res) => {
   if (req.method === 'OPTIONS') { res.statusCode = 204; res.end(); return; }
 
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  let pathname = parsedUrl.pathname;
-  let filePath;
-
-  if (pathname.endsWith('quick.worker-CyRZCJML.js')) {
-    filePath = path.join(process.cwd(), 'dist', 'assets', 'quick.worker-CyRZCJML.js');
-  } else if (pathname.endsWith('blob-loader.worker-Dk3X5ub-.js')) {
-    filePath = path.join(process.cwd(), 'dist', 'assets', 'blob-loader.worker-Dk3X5ub-.js');
-  } else {
-    filePath = path.join(process.cwd(), 'dist', pathname);
-  }
+  let filePath = path.join(process.cwd(), parsedUrl.pathname);
 
   // Directory -> index.html
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
@@ -56,14 +47,9 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
     res.setHeader('Content-Type', contentType);
-
-    // Cache fonts and images aggressively; prevent caching for HTML/JS/CSS
-    if (['.woff2','.woff','.otf','.webp','.jpg','.png'].includes(ext)) {
-      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-    } else {
-      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-      res.setHeader('Pragma', 'no-cache');
-      res.setHeader('Expires', '0');
+    // Cache fonts and images aggressively
+    if (['.woff2', '.woff', '.otf', '.webp', '.jpg', '.png'].includes(ext)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000');
     }
     fs.createReadStream(filePath).pipe(res);
   } else {

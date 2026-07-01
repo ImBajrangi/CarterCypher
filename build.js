@@ -125,7 +125,7 @@ const payloadData = serializePayload(data);
 const payloadStr = JSON.stringify(payloadData);
 
 // Write _payload.json files to dist
-const payloadDirs = ['', 'work', 'fashion', 'journey'];
+const payloadDirs = ['', 'about', 'work', 'fashion', 'journey', '404'];
 payloadDirs.forEach(dir => {
   const dirPath = pathLib.join(distPath, dir);
   fs.mkdirSync(dirPath, { recursive: true });
