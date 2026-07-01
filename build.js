@@ -24,8 +24,15 @@ const lastName = nameWords.slice(1).join(" ") || "Cypher";
 
 console.log(`Using custom identity: FullName="${fullName}", FirstName="${firstName}", LastName="${lastName}", Subtitle="${subtitle}"`);
 
-// Create dist/ folder
+// Save current dist/index.html content if it exists before wiping dist
 const distPath = pathLib.join(__dirname, 'dist');
+const distIndexPath = pathLib.join(distPath, 'index.html');
+let savedDistIndexContent = null;
+if (fs.existsSync(distIndexPath)) {
+  savedDistIndexContent = fs.readFileSync(distIndexPath, 'utf-8');
+}
+
+// Create dist/ folder
 if (fs.existsSync(distPath)) {
   fs.rmSync(distPath, { recursive: true, force: true });
 }
@@ -165,10 +172,6 @@ function updateFloatingNav(htmlContent) {
 function updateNamesAndSubtitle(content) {
   let updated = content;
   
-  // Inject Service Worker Unregister script immediately in head on localhost to bypass cache bugs
-  const swUnregisterScript = `<script>if("serviceWorker" in navigator && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")){ navigator.serviceWorker.getRegistrations().then(regs => { for(let r of regs) r.unregister(); }); }</script>`;
-  updated = updated.replace(/<head>/, `<head>${swUnregisterScript}`);
-
   // Replace the loading screen and header text
   updated = updated.replace(/Kenichi Aikawa/g, fullName);
   updated = updated.replace(/Kenichi/g, firstName);
@@ -177,17 +180,19 @@ function updateNamesAndSubtitle(content) {
   
   return updated;
 }
-
-// 4. Update and write index.html to dist/
-const indexPath = pathLib.join(__dirname, 'index.html');
-if (fs.existsSync(indexPath)) {
-  let content = fs.readFileSync(indexPath, 'utf-8');
-  content = updateNuxtData(content);
-  content = updateFloatingNav(content);
-  content = updateNamesAndSubtitle(content);
-  fs.writeFileSync(pathLib.join(distPath, 'index.html'), content, 'utf-8');
-  console.log('Updated and wrote dist/index.html');
+// 4. Restore dist/index.html to its exact pre-build state
+if (savedDistIndexContent !== null) {
+  fs.writeFileSync(distIndexPath, savedDistIndexContent, 'utf-8');
+  console.log('Restored dist/index.html to its exact pre-build state.');
+} else {
+  // Fallback: if it didn't exist, copy from root
+  const indexPath = pathLib.join(__dirname, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    fs.copyFileSync(indexPath, distIndexPath);
+    console.log('Copied original index.html to dist/index.html as fallback.');
+  }
 }
+
 
 // 5. Update and write about/index.html to dist/
 const aboutPath = pathLib.join(__dirname, 'about', 'index.html');
@@ -306,26 +311,22 @@ if (fs.existsSync(scriptsPath)) {
     let jsContent = fs.readFileSync(fullPath, 'utf-8');
     let hasChanged = false;
     
-    // SW Bypass replacements on Localhost
-    if (jsContent.includes('serviceWorker') || jsContent.includes('register')) {
-      if (jsContent.includes('"serviceWorker"in navigator')) {
-        jsContent = jsContent.replace(/"serviceWorker"in navigator/g, '"serviceWorker"in navigator && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1"');
-        hasChanged = true;
-      }
-      if (jsContent.includes('navigator.serviceWorker.register(')) {
-        jsContent = jsContent.replace(/navigator.serviceWorker.register\(/g, '(window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" ? Promise.reject("SW disabled on localhost") : navigator.serviceWorker.register)(');
-        hasChanged = true;
-      }
-    }
-
-    // Name & Subtitle replacements
+    // Name & Subtitle replacements with domain protection to prevent breaking image assets
     if (jsContent.includes('Kenichi') || jsContent.includes('Aikawa') || jsContent.includes('Photographer')) {
+      // Protect assets domain and main site domain from replacements
+      jsContent = jsContent.replace(/aikawakenichi-v2\.storage\.googleapis\.com/g, 'GCS_DOMAIN_PLACEHOLDER');
+      jsContent = jsContent.replace(/aikawakenichi\.com/g, 'MAIN_DOMAIN_PLACEHOLDER');
+      
       // Order of replacement is important (most specific to least specific)
       jsContent = jsContent.replace(/Kenichi Aikawa/g, fullName);
       jsContent = jsContent.replace(/Kenichi/g, firstName);
       jsContent = jsContent.replace(/Aikawa/g, lastName);
       jsContent = jsContent.replace(/\(Photographer\)/g, subtitle);
       jsContent = jsContent.replace(/Photographer/g, subtitle.replace(/[()]/g, ''));
+      
+      // Restore protected domains
+      jsContent = jsContent.replace(/GCS_DOMAIN_PLACEHOLDER/g, 'aikawakenichi-v2.storage.googleapis.com');
+      jsContent = jsContent.replace(/MAIN_DOMAIN_PLACEHOLDER/g, 'aikawakenichi.com');
       hasChanged = true;
     }
     
