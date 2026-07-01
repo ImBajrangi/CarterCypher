@@ -4,6 +4,8 @@
   "routes": [
     { "src": "/images/(.*)", "dest": "/images/$1", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
     { "src": "/assets/(.*)", "dest": "/assets/$1", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
+    { "src": "/(.*)quick.worker-CyRZCJML.js", "dest": "/assets/quick.worker-CyRZCJML.js", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
+    { "src": "/(.*)blob-loader.worker-Dk3X5ub-.js", "dest": "/assets/blob-loader.worker-Dk3X5ub-.js", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
     { "handle": "filesystem" }
   ]
 }

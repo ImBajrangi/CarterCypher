@@ -30,7 +30,16 @@ const server = http.createServer((req, res) => {
   if (req.method === 'OPTIONS') { res.statusCode = 204; res.end(); return; }
 
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  let filePath = path.join(process.cwd(), 'dist', parsedUrl.pathname);
+  let pathname = parsedUrl.pathname;
+  let filePath;
+
+  if (pathname.endsWith('quick.worker-CyRZCJML.js')) {
+    filePath = path.join(process.cwd(), 'dist', 'assets', 'quick.worker-CyRZCJML.js');
+  } else if (pathname.endsWith('blob-loader.worker-Dk3X5ub-.js')) {
+    filePath = path.join(process.cwd(), 'dist', 'assets', 'blob-loader.worker-Dk3X5ub-.js');
+  } else {
+    filePath = path.join(process.cwd(), 'dist', pathname);
+  }
 
   // Directory -> index.html
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
